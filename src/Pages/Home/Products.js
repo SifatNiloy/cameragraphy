@@ -9,7 +9,7 @@ const Products = () => {
         <div>
             <h2>This is products</h2>
             {
-                products.map(product=> <Product product={product}></Product>)
+                products.map(product=> <Product key={product._id} product={product}></Product>)
             }
         </div>
     );

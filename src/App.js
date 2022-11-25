@@ -4,6 +4,7 @@ import './App.css';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import NotFound from './Pages/Shared/NotFound';
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
