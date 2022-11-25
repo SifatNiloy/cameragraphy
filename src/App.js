@@ -3,7 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
+import Login from './Pages/Login/Login';
 import Navbar from './Pages/Shared/Navbar';
+import NotFound from './Pages/Shared/NotFound';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
+        <Route path='/signin' element={<Login></Login>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route></Route>
       </Routes>
     </div>
