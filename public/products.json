@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Nikon Z6 mark I",
+    "img":"https://i.ibb.co/y4t6xmd/nikon-z6.jpg",
+    "price": "৳ 299,000",
+    "description": "The Nikon Z6 mark Il with lens 24-120mm sits below the Z7 II as the flagship 'multimedia' model in the Z-series mirrorless lineup. Offering a 24MP full-frame sensor, in-body 5-axis stabilization and high-quality 4K video shooting,"
+  },
+  {
+    "name": "Canon ESO M200 15-45mm",
+    "img":"https://i.ibb.co/2NXHS91/Canon-ESO-M200.jpg",
+    "price": "৳ 56,000",
+    "description": "24.1MP APS-C CMOS Sensor, DIGIC 8 Image Processor, 3.0 1.04m-D, 180° Tilt Touchscreen, UHD 4K and HD 720p120 Video Recording,Dual Pixel CMOS AF, ISO 100-25600, 6.1 fps Shooting, Built-In Wi-Fi and Bluetooth,Self-Portrait Mode, 4K Time-Lapse Movie"
+  },
+  {
+    "name": "Canon EOS R10 Body Camera",
+    "img":"https://i.ibb.co/4twJzs4/Canon-EOS-R10.jpg",
+    "price": "৳ 100,000",
+    "description": "the Canon EOS R10 is a sleek mirrorless camera with a hybrid ethos. Adept in both photo and video worlds, the R10 brings an APS-C sensor to the R system, along with high-speed shooting, intelligent AF, and impressive 4K video recording "
+  },
+  {
+    "name": "Canon EOS R6 Body Camera",
+    "img":"https://i.ibb.co/09xzKMz/Canon-EOS-R6-RF24-105mm.jpg",
+    "price": "৳ 255,000",
+    "description": "20MP Full-Frame CMOS Sensor, DIGIC X Image Processor, 4K60p and FHD,120p 10-Bit Internal Video,Sensor-Shift 5-Axis Image Stabilization,12 fps Mech. Shutter, 20 fps E. Shutter,Dual Pixel CMOS AF II with 1053 Points ,0.5″ 3.69m-Dot,OLED EVF,3″ 1.62m-Dot Vari-Angle Touchscreen LCD"
+  },
+  {
+    "name": "Canon EOS R3 Body (5GHz) ",
+    "img":"https://i.ibb.co/0ydrCdK/Canon-EOS-R3.jpg",
+    "price": "৳ 620,000",
+    "description": "24MP Full-Frame Stacked BSI CMOS Sensor,Dual Pixel CMOS AF II, Eye Control AF,6K60 Raw and 4K120 10-Bit Internal Video,30 fps E. Shutter, 12 fps Mech. Shutter,5.76m-Dot EVF with 120 fps Refresh Rate,3.2″ 4.2m-Dot Vari-Angle Touchscreen LCD,Sensor-Shift 5-Axis Image Stabilization,Multi-Function Shoe, Built-In Vert. Grip"
+  },
+  {
+    "name": "SONY ALPHA 7 III FULL-FRAME 24.2 MP 4K INTERCHANGEABLE-LENS",
+    "img":"https://i.ibb.co/kgBtx2Q/SONY-ALPHA-7-copy.jpg",
+    "price": "৳ 299,000",
+    "description": "The Sony a7C is the company's latest and smallest full-frame interchangeable lens camera. It fits a 24MP full-frame sensor and image stabilization into a body more closely resembling the APS-C sensor a6600."
+  },
+  {
+    "name": "Panasonic Lumix G7 16MP 4K Wi-Fi Mirrorless Camera ",
+    "img":"https://i.ibb.co/4s36WsF/Panasonic-Lumix-G7.jpg",
+    "price": "৳ 63,000",
+    "description": "One Shot AF, Shutter AF, Half Press Release, Quick AF, Continuous AF (during motion picture recording), Eye Sensor AF, AF+MF, MF Assist, Touch MF Assist, Focus Peaking, Touch AF/AE Function, Touch Pad AF, Touch Shutter"
+  },
+  {
+    "name": "Canon EOS 250D 24.1MP Full HD WI-FI DSLR Camera",
+    "img":"https://i.ibb.co/WK13BMh/Canon-EOS-250-D.jpg",
+    "price": "৳ 63,000",
+    "description": "Via optical viewfinder: 63-zone dual-layer metering sensor with Evaluative, partial, spot (centre only) and centre-weighted average available,30-1/4000 sec (1/2 or 1/3 stop increments), Bulb "
+  },
+  {
+    "name": "Canon EOS M50 Mark II 24.1MP With 15-45MM ",
+    "img":"https://i.ibb.co/r2nX8q4/Canon-EOS-M50.jpg",
+    "price": "৳ 74,000",
+    "description": "AF Point Selection: Automatic selection, Manual selection,AF System Points Stills: Maximum 3 975 selectable AF point positions / Up to 143 zone,Stills: 30s - 1/4 000s, Bulb,Movie recording: 1/25s - 1/4 000s (PAL) or 1/30s - 1/4 000s (NTSC),Silent Shutter Available: Single Shot"
+  },
+  {
+    "name": "NIKON D7500 20.9 MP WITH 18-140MM LENS ",
+    "img":"https://i.ibb.co/0h2zBkH/NIKON-D7500.jpg",
+    "price": "৳ 117,000",
+    "description": "Actual: 21.51 Megapixel,CMOS, 23.5 x 15.6 mm,Center-Weighted Average Metering, Matrix, Spot Metering, Highlight Weighted ,Metering Range: EV 3.0 to EV 20.0,Up to 8 fps at 20.9 MP for up to 50 Frames in Raw Format,Red-Eye Reduction Fill-In Slow Sync/Red-Eye Reduction Off Slow Sync Rear Curtain/Slow Sync"
+  },
+  {
+    "name": "Panasonic Lumix GH5 20.3MP 4K Wi-Fi Bluetooth Touchscreen Mirrorless",
+    "img":"https://i.ibb.co/LrzhJNz/Panasonic-Lumix-GH5.jpg",
+    "price": "৳ 240,000",
+    "description": "Actual: 21.77 Megapixel,Internal 4:2:2 10-Bit 4K Video at 24/30p,Aperture Priority, Manual, Program, Shutter Priority,(Center-Weighted Average, Multiple, Spot),Auto, 200 to 25600 (Extended: 100 to 25600)"
+  },
+  {
+    "name": "Sony Alpha 7C Compact Mirrorless Full-frame Camera (Only Body)",
+    "img":"https://i.ibb.co/PmjvGWn/SONY-ALPHA-7-C.jpg",
+    "price": "৳ 175,000",
+    "description": "35 mm,693 points (phase-detection AF), APS-C mode with FF lens: 299 points (phase-detection AF), with APS-C lens: 221 points (phase-detection AF) / 425 points (contrast-detection AF),NUMBER OF PIXELS (EFFECTIVE)- Approx. 24.2 megapixels,"
+  }
+]
+
+
