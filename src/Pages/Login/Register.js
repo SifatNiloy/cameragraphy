@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
-const Login = () => {
+
+const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -16,8 +17,8 @@ const Login = () => {
 
     let signInError;
 
-    if ( loading || gLoading) {
-        return <Loading/>
+    if (loading || gLoading) {
+        return <Loading />
     }
     if (error || gError) {
         signInError = <p className='text-red-500'>{error?.message || gError?.message}</p>
@@ -34,7 +35,7 @@ const Login = () => {
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="text-center text-3xl font-bold">Login</h2>
+                    <h2 className="text-center text-3xl font-bold">Sign Up</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div class="form-control w-full max-w-xs">
@@ -102,9 +103,9 @@ const Login = () => {
 
                         {signInError}
 
-                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                        <input className='btn w-full max-w-xs text-white' type="submit" value="Create Account" />
                     </form>
-                    <p>New to Doctors Portal? <Link className='text-blue-800' to="/register">Create New Account </Link> </p>
+                    <p>Already have an account? <Link className='text-blue-800' to="/login">Create New Account </Link> </p>
                     <div className="divider">OR</div>
                     <button onClick={() => signInWithGoogle()}
                         className="btn btn-active btn-secondary">Sign In with Google</button>
@@ -114,4 +115,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
