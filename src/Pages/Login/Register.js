@@ -40,6 +40,38 @@ const Register = () => {
 
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
+                                <span class="label-text">Name</span>
+
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="your name"
+                                class="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: 'name is required',
+                                    }
+
+                                },
+                                    {
+                                        pattern: {
+                                            value: 4,
+                                            message: 'Enter name longer than 4 character'
+                                        }
+                                    })}
+                            />
+                            <label class="label">
+                                {errors.name?.type === 'required' && <p role="alert"><span class="label-text-alt text-red-600">{errors.name.message}</span></p>}
+                                {errors.name?.type === 'pattern' && <p role="alert"><span class="label-text-alt text-red-600">{errors.name.message}</span></p>}
+
+
+                            </label>
+                        </div>
+                        
+
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
                                 <span class="label-text">Email</span>
 
                             </label>
