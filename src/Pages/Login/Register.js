@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -9,11 +9,11 @@ const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     let signInError;
 
@@ -29,7 +29,7 @@ const Register = () => {
     }
     const onSubmit = data => {
         console.log(data);
-        signInWithEmailAndPassword(data.email, data.password);
+        createUserWithEmailAndPassword(data.email, data.password);
     };
     return (
         <div className='flex h-screen justify-center items-center'>
@@ -55,15 +55,15 @@ const Register = () => {
 
                                 },
                                     {
-                                        pattern: {
+                                        minLength: {
                                             value: 4,
-                                            message: 'Enter name longer than 4 character'
+                                            message: 'Name must be 4 characters or longer'
                                         }
                                     })}
                             />
                             <label class="label">
                                 {errors.name?.type === 'required' && <p role="alert"><span class="label-text-alt text-red-600">{errors.name.message}</span></p>}
-                                {errors.name?.type === 'pattern' && <p role="alert"><span class="label-text-alt text-red-600">{errors.name.message}</span></p>}
+                                {errors.name?.type === 'minLength' && <p role="alert"><span class="label-text-alt text-red-600">{errors.name.message}</span></p>}
 
 
                             </label>
