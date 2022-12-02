@@ -4,7 +4,7 @@ import './App.css';
 import About from './Pages/About/About';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Orders from './Pages/Dashboard/Orders';
-import Paymet from './Pages/Dashboard/Paymet';
+import Payment from './Pages/Dashboard/Payment';
 import Review from './Pages/Dashboard/Review';
 import Explore from './Pages/Explore/Explore';
 import Home from './Pages/Home/Home';
@@ -25,11 +25,7 @@ function App() {
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/explore' element={ <Explore /> }></Route>
-        <Route path='/payment' element={ 
-          <RequireAuth>
-            <Paymet />
-          </RequireAuth>
-         }></Route>
+       
         <Route path='/orders' element={ 
           <RequireAuth>
             <Orders />
@@ -40,16 +36,22 @@ function App() {
             <Review />
           </RequireAuth>
          }></Route>
-        <Route path='/dashboard' element={
+        <Route path='dashboard' element={
           <RequireAuth>
             <Dashboard/>
           </RequireAuth>
-        }></Route>
+        }>
+          {/* <Route index element={<Dashboard></Dashboard>}></Route> */}
+          <Route path='payment' element={<Payment></Payment>}></Route>
+          <Route path='orders' element={<Orders></Orders>}></Route>
+          <Route path='review' element={<Review></Review>}></Route>
+        </Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
             <Purchase></Purchase>
-          </RequireAuth>
-        }></Route>
+          </RequireAuth>          
+        }>
+        </Route>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
         <Route></Route>

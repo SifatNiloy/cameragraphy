@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Paymet = () => {
+const Payment = () => {
     return (
         <div>
             <h1 className='text-3xl flex justify-center'>Payment system coming soon</h1>
@@ -8,4 +8,4 @@ const Paymet = () => {
     );
 };
 
-export default Paymet;
+export default Payment;
