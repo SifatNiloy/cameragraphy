@@ -5,17 +5,30 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
-
+    let items = <ul class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
+        <li><Link to='/payment'>Pay</Link></li>
+        <li><Link to='/orders'>My Orders</Link></li>
+        <li><Link to='/review'>Review</Link></li>
+        <li><a>Logout</a></li>
+    </ul >
+    
     const [user, loading, error] = useAuthState(auth);
     const logout = () => {
         signOut(auth);
     };
-    const menuItems=<>
+    const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/explore'>Explore</Link></li>
         <li><Link to='/about'>About</Link></li>
-        <li>{user ? <button className="btn btn-ghost" onClick={logout}>Logout</button> : <Link to='/login'>Sign In</Link> }</li>
-        {/* <li><Link to='/register'>Registration</Link></li> */}
+        <li>{user ?
+            <div class="dropdown dropdown-bottom">
+
+                <label tabindex="0" class="btn ">Dashboard</label>
+                {items}
+            </div>
+            : ''} </li>
+        <li>{user ? <button className="btn btn-ghost" onClick={logout}>Logout</button> : <Link to='/dashboard'>Sign In</Link>}</li>
+        {/* <button><Link to='/dashboard'>Dashboard</Link></button> */}
     </>
     return (
         <div className="navbar bg-base-100">
@@ -28,14 +41,14 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Cameragraphy</a>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Cameragraphy</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
             </div>
-            
+
         </div>
     );
 };
