@@ -15,13 +15,13 @@ const Orders = () => {
     },[user])
     return (
         <div className=''>
-            <h1>total Orders : {orders.length} </h1>
+            <h1>My Ordered Products : {orders.length} </h1>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                 
                     <thead>
                         <tr>
-                            {/* <th></th> */}
+                            <th></th>
                             <th>Name</th>
                             <th>Price</th>
                             <th>Phone</th>
@@ -31,7 +31,8 @@ const Orders = () => {
                     <tbody>
                     
                        {
-                            orders.map(order => <tr>
+                            orders.map((order, index) => <tr>
+                                <th>{index+1}</th>
                                 <th>{order.name}</th>
                                 <td>{order.price}</td>
                                 <td>{order.phone}</td>
