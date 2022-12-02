@@ -16,8 +16,8 @@ const Orders = () => {
     return (
         <div className=''>
             <h1>My Ordered Products : {orders.length} </h1>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                 
                     <thead>
                         <tr>
