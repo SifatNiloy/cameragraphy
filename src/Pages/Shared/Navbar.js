@@ -7,6 +7,7 @@ import auth from '../../firebase.init';
 const Navbar = () => {
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
     let items = <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
         <li><Link to='/payment'>Pay</Link></li>
