@@ -27,6 +27,7 @@ const Dashboard = () => {
                     <li><Link to='/dashboard/payment'>Pay</Link></li>
                     <li><Link to='/dashboard/orders'>My Orders</Link></li>
                     <li><Link to='/dashboard/review'>Review</Link></li>
+                    <li><Link to='/dashboard/users'>Users</Link></li>
                     <li><button onClick={logout}>Logout</button></li>
                 </ul>
 

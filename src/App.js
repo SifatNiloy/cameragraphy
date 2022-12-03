@@ -6,6 +6,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Orders from './Pages/Dashboard/Orders';
 import Payment from './Pages/Dashboard/Payment';
 import Review from './Pages/Dashboard/Review';
+import Users from './Pages/Dashboard/Users';
 import Explore from './Pages/Explore/Explore';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -45,6 +46,7 @@ function App() {
           <Route path='payment' element={<Payment></Payment>}></Route>
           <Route path='orders' element={<Orders></Orders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
+          <Route path='users' element={<Users></Users>}></Route>
         </Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
