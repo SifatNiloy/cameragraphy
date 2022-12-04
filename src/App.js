@@ -1,4 +1,6 @@
 
+import { Fragment } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Pages/About/About';
@@ -16,9 +18,10 @@ import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import NotFound from './Pages/Shared/NotFound';
-
+const queryClient= new QueryClient();
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <div >
       <Navbar></Navbar>
       <Routes>
@@ -46,7 +49,7 @@ function App() {
           <Route path='payment' element={<Payment></Payment>}></Route>
           <Route path='orders' element={<Orders></Orders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          <Route path='users' element={<Users></Users>}></Route>
+          <Route path='users' element={<Users></Users> }></Route>
         </Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
@@ -60,6 +63,7 @@ function App() {
       </Routes>
       <Footer></Footer>
     </div>
+    </QueryClientProvider>
   );
 }
 

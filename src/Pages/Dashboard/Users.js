@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
+import UserRow from './UserRow';
 
 
 const Users = () => {
-    const [users, setUsers]= useState([]);
-    useEffect(()=>{
-        fetch('http://localhost:5000/user',{
-            method:'GET',
-            headers:{
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-        .then(res=> res.json())
-        .then(data=> setUsers(data))
-    })
+    
+    const { data:users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user').then(res=> res.json()) );
+    if(isLoading){
+        return <Loading></Loading>
+    }
+       
+    // const [users, setUsers]= useState([]);
+    // useEffect(()=>{
+    //     fetch('http://localhost:5000/user',{
+    //         method:'GET',
+    //         headers:{
+    //             authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    //         }
+    //     })
+    //     .then(res=> res.json())
+    //     .then(data=> setUsers(data))
+    // })
    
     return (
         <div>
@@ -30,13 +39,12 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {
-                            users.map((user, index) => <tr>
-                                <th>{index + 1}</th>
-                                <th>{user.email}</th>
-                                <th><button class="btn btn-xs">Make Admin</button></th>
-                                <th><button class="btn btn-xs">Delete</button></th>
-                               
-                            </tr>)
+                            users.map((user,index)=><UserRow 
+                            key={user._id} 
+                            user={user} 
+                            index={index}                          
+                            refetch={refetch}
+                            ></UserRow> )
                         }
                         
                         
