@@ -17,15 +17,29 @@ const AddProduct = () => {
         .then(res=> res.json())
         .then(result=>{
             if(result.success){
+                console.log(result);
                 const img= result.data.url;
-                const product={
+               
+                const newProduct={
                     name: data.name,
                     price: data.price,
                     description: data.description,
                     img: img
                 }
+                console.log(newProduct)
                 //sending to database
-                
+                fetch(`http://localhost:5000/newProduct`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(newProduct)
+                })
+                    .then(res => res.json())
+                    .then(inserted => {
+                        console.log(inserted)
+                    })
             }
            
         })
