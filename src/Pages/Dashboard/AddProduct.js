@@ -3,8 +3,32 @@ import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const imgStorageKey ='b45577590052caef69c902118f449152';
     const onSubmit = async data => {
-        console.log(data);
+        const image= data.image[0];
+        const formData= new FormData();
+        formData.append('image', image)
+        const url =`https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+        fetch(url,{
+            method: 'POST',
+            body: formData
+        })
+        .then(res=> res.json())
+        .then(result=>{
+            if(result.success){
+                const img= result.data.url;
+                const product={
+                    name: data.name,
+                    price: data.price,
+                    description: data.description,
+                    img: img
+                }
+                //sending to database
+                
+            }
+           
+        })
        
     };
     return (
@@ -39,7 +63,7 @@ const AddProduct = () => {
                         type="text"
                         placeholder="product price"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
+                        {...register("price", {
                             required: {
                                 value: true,
                                 message: 'price value is required',
@@ -49,7 +73,7 @@ const AddProduct = () => {
                             )}
                     />
                     <label className="label">
-                        {errors.name?.type === 'required' && <p role="alert"><span className="label-text-alt text-red-600">{errors.name.message}</span></p>}
+                        {errors.price?.type === 'required' && <p role="alert"><span className="label-text-alt text-red-600">{errors.price.message}</span></p>}
                         
 
 
@@ -62,7 +86,7 @@ const AddProduct = () => {
                         type="text"
                         placeholder="description"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
+                        {...register("description", {
                             required: {
                                 value: true,
                                 message: 'description is required',
@@ -71,7 +95,7 @@ const AddProduct = () => {
                         })}
                     />
                     <label className="label">
-                        {errors.name?.type === 'required' && <p role="alert"><span className="label-text-alt text-red-600">{errors.name.message}</span></p>}
+                        {errors.description?.type === 'required' && <p role="alert"><span className="label-text-alt text-red-600">{errors.description.message}</span></p>}
                         
 
 
@@ -97,7 +121,7 @@ const AddProduct = () => {
                             )}
                     />
                     <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}
+                        {errors.image?.type === 'required' && <span className="label-text-alt text-red-500">{errors.image.message}
                         </span>}
                         
                     </label>
