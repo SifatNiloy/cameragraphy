@@ -11,21 +11,30 @@ const UserRow = ({user,index, refetch}) => {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-        .then(res=> res.json())
+        .then(res=> {
+            if(res.status===403){
+                // toast.error('failed to make an admin ')
+            }
+            return res.json()
+        })
         .then(data=> {
-            console.log(data);
-            refetch();
-            toast.success(`successfully made an admin`);
+            if(data.modifiedCount>0){
+                console.log(data);
+                refetch();
+                // toast.success(`successfully made an admin`);
+            }
         })
     }
+    
     return (
         <tr>
             <th>{index + 1}</th>
             <td>{user.email}</td>
-            <td>{role === 'admin'? 'Admin': <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
-            <td><button class="btn btn-xs">Delete</button></td>
+            <td>{role === 'admin'? 'Admin': <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+            <td><button className="btn btn-xs">Delete</button></td>
 
         </tr>
+        
     );
 };
 

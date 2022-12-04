@@ -1,10 +1,13 @@
 
-import { Fragment } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import About from './Pages/About/About';
+import AddProduct from './Pages/Dashboard/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 import Orders from './Pages/Dashboard/Orders';
 import Payment from './Pages/Dashboard/Payment';
 import Review from './Pages/Dashboard/Review';
@@ -13,6 +16,7 @@ import Explore from './Pages/Explore/Explore';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer';
@@ -49,7 +53,26 @@ function App() {
           <Route path='payment' element={<Payment></Payment>}></Route>
           <Route path='orders' element={<Orders></Orders>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          <Route path='users' element={<Users></Users> }></Route>
+          <Route path='manageOrders' element={
+            <RequireAdmin>
+                <ManageAllOrders />
+            </RequireAdmin>
+          }></Route>
+          <Route path='addProduct' element={
+            <RequireAdmin>
+                <AddProduct />
+            </RequireAdmin>
+           }></Route>
+          <Route path='users' element={
+            <RequireAdmin>
+                <Users></Users>
+            </RequireAdmin>
+           }></Route>
+          <Route path='manageProducts' element={
+            <RequireAdmin>
+                <ManageProducts /> 
+            </RequireAdmin>
+          }></Route>
         </Route>
         <Route path='/product/:productId' element={
           <RequireAuth>
@@ -62,7 +85,9 @@ function App() {
         <Route></Route>
       </Routes>
       <Footer></Footer>
+        <ToastContainer />
     </div>
+      
     </QueryClientProvider>
   );
 }
