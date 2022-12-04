@@ -8,10 +8,10 @@ const AddProduct = () => {
        
     };
     return (
-        <div>
-            <h2 className="3xl">Add a product</h2>
+        <div className='ml-10'>
+            
             <form onSubmit={handleSubmit(onSubmit)}>
-
+                <h2 className="text-3xl my-12">Add a product</h2>
                 <div className="form-control w-full max-w-xs">
                    
                     <input
@@ -21,7 +21,7 @@ const AddProduct = () => {
                         {...register("name", {
                             required: {
                                 value: true,
-                                message: 'name is required',
+                                message: 'product name is required',
                             }
 
                         })}
@@ -42,7 +42,7 @@ const AddProduct = () => {
                         {...register("name", {
                             required: {
                                 value: true,
-                                message: 'name is required',
+                                message: 'price value is required',
                             }
 
                         },
@@ -65,7 +65,7 @@ const AddProduct = () => {
                         {...register("name", {
                             required: {
                                 value: true,
-                                message: 'name is required',
+                                message: 'description is required',
                             }
 
                         })}
@@ -77,8 +77,6 @@ const AddProduct = () => {
 
                     </label>
                 </div>
-
-
                 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -103,11 +101,7 @@ const AddProduct = () => {
                         </span>}
                         
                     </label>
-                </div>
-
-
-
-            
+                </div>           
 
                 <input className='btn w-full max-w-xs text-white' type="submit" value="Add Product" />
             </form>
