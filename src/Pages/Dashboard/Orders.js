@@ -79,7 +79,7 @@ const Orders = () => {
                                 <td>{order.price}</td>
                                 <td>{order.phone}</td>
                                 <td>{order.address}</td>
-                                <td><button onClick={()=>handleDelete(order._id)} class="btn btn-xs">Delete Order</button></td>
+                                <td><button onClick={()=>handleDelete(order._id)} className="btn btn-xs">Delete Order</button></td>
                             </tr>)
                        }
                     </tbody>

@@ -52,7 +52,7 @@ const ManageProducts = () => {
                                 <th>{index + 1}</th>
                                 <th>{order.name}</th>
                                 <td>{order.price}</td>
-                                <td><button onClick={() => handleDelete(order._id)} class="btn btn-xs">Delete Product</button></td>
+                                <td><button onClick={() => handleDelete(order._id)} className="btn btn-xs">Delete Product</button></td>
                             </tr>)
                         }
                     </tbody>
