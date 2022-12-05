@@ -12,7 +12,7 @@ const Navbar = () => {
     let items = <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
         <li><Link to='/payment'>Pay</Link></li>
         <li><Link to='/orders'>My Orders</Link></li>
-        <li><Link to='/review'>Review</Link></li>
+        <li><Link to='/myreview'>Review</Link></li>
         <li><button onClick={logout}>Logout</button></li>
     </ul >
     

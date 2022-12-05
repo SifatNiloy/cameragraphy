@@ -8,9 +8,9 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
+import MyReview from './Pages/Dashboard/MyReview';
 import Orders from './Pages/Dashboard/Orders';
 import Payment from './Pages/Dashboard/Payment';
-import Review from './Pages/Dashboard/Review';
 import Users from './Pages/Dashboard/Users';
 import Explore from './Pages/Explore/Explore';
 import Home from './Pages/Home/Home';
@@ -39,9 +39,9 @@ function App() {
             <Orders />
           </RequireAuth>
          }></Route>
-        <Route path='/review' element={
+        <Route path='/myreview' element={
           <RequireAuth>
-            <Review />
+            <MyReview />
           </RequireAuth>
          }></Route>
         <Route path='dashboard' element={
@@ -52,7 +52,7 @@ function App() {
           {/* <Route index element={<Dashboard></Dashboard>}></Route> */}
           <Route path='payment' element={<Payment></Payment>}></Route>
           <Route path='orders' element={<Orders></Orders>}></Route>
-          <Route path='review' element={<Review></Review>}></Route>
+          <Route path='myreview' element={<MyReview/>}></Route>
           <Route path='manageOrders' element={
             <RequireAdmin>
                 <ManageAllOrders />

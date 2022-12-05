@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { json } from 'react-router-dom';
 import './Review.css'
 
-const Review = () => {
+const MyReview = () => {
 
     const [star, setStar] = useState(5);
     const starValue = () => {
@@ -73,7 +73,7 @@ const Review = () => {
             .then(result => {
                 console.log(result)
             })
-    
+        event.target.review.value=' ';
 
     }
 
@@ -104,4 +104,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default MyReview;
