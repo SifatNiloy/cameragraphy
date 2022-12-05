@@ -1,9 +1,63 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useQuery } from 'react-query';
 
 const ManageProducts = () => {
+    // const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/explore').then(res => res.json()));
+    // console.log(products)
+    const [products, setProducts]=useState([]);
+    useEffect(()=>{
+        fetch(`http://localhost:5000/explore`)
+        .then(res=>res.json())
+        .then(data=> setProducts(data))
+    })
+    const handleDelete = id => {
+        // event.preventDefault();
+        const proceed = window.confirm('Are you sure you want to delete this order?');
+        if (proceed) {
+            console.log('deleting order with id', id);
+            const url = `http://localhost:5000/explore/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        console.log('deleted');
+                        const remaining = products.filter(product => product._id !== id);
+                        setProducts(remaining);
+                    }
+                })
+        }
+    }
     return (
-        <div>
-            <h3 className="3xl">Manage Products</h3>
+        <div className=''>
+            <h1>All Products : {products.length} </h1>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Price</th>                           
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            products.map((order, index) => <tr>
+                                <th>{index + 1}</th>
+                                <th>{order.name}</th>
+                                <td>{order.price}</td>
+                                <td><button onClick={() => handleDelete(order._id)} class="btn btn-xs">Delete Product</button></td>
+                            </tr>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
