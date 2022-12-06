@@ -30,7 +30,7 @@ const UserRow = ({ user, index, refetch }) => {
     const handleDeleteUser = id => {
 
         // event.preventDefault();
-        const proceed = window.confirm('Are you sure you want to delete this order?');
+        const proceed = window.confirm('Are you sure you want to delete this user?');
 
         if (proceed) {
             console.log('deleting user with id', id);

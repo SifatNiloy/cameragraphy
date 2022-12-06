@@ -1,17 +1,17 @@
-# Tour Planner Booking Online Service
+# Online Camera Shop 
 
-[Visit our site](https://travelofun-df17a.web.app/)
+[Visit our site](https://cameragraphy-6ea25.web.app/)
 
-Server Side Link: [click here](https://github.com/SifatNiloy/travelofun-server)
+Server Side Link: [click here](https://github.com/SifatNiloy/cameragraphy-server)
 
-Travelofun is  a public service that provides travel and tourism-related services to the general public on behalf of accommodation or travel suppliers to offer different kinds of travelling packages for each destination. We provide travel management services on a global scale. It differ in terms of their size and scale, as well as the services that are on offer. We support those companies and organizations that engage in international travel and need professional help.
+Cameragraphy is an online camera shop where you can choose the camera you want and place order from our site. Our delivery team will deliver your ordered camera on time. 
 
-• You can order travel packages through our website.
+• You can place order camera product through our website.
 
-• There are many packages so you can choose them on your budget and wish.
+• There are many cameras so you can choose them on your budget and wish.
 
-• Every package has it's description details, which will help you to decide where you want to travel.
+• Every camera has it's description details, which will help you to decide which one to buy.
 
-• You can also get the tickets on your address.
+• You will also get deliverd your product on time at a very few extra cost. 
 
-• You can order via online 24 hours a day, 7 days in a week , at any emergency, and you will contact you for further details. 
+• You can order via online 24 hours a day, 7 days in a week . 
