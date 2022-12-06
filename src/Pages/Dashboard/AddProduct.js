@@ -28,7 +28,7 @@ const AddProduct = () => {
                 }
                 console.log(newProduct)
                 //sending to database
-                fetch(`http://localhost:5000/newProduct`, {
+                fetch(`https://cameragraphy-server.vercel.app/newProduct`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

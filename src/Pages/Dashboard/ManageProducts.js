@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 const ManageProducts = () => {
-    // const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:5000/explore').then(res => res.json()));
+    // const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://cameragraphy-server.vercel.app/explore').then(res => res.json()));
     // console.log(products)
     const [products, setProducts]=useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/explore`)
+        fetch(`https://cameragraphy-server.vercel.app/explore`)
         .then(res=>res.json())
         .then(data=> setProducts(data))
     })
@@ -17,7 +17,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure you want to delete this order?');
         if (proceed) {
             console.log('deleting order with id', id);
-            const url = `http://localhost:5000/explore/${id}`;
+            const url = `https://cameragraphy-server.vercel.app/explore/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

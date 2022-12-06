@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
+import './Login.css'
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -42,9 +43,9 @@ const Login = () => {
     return (
         <div className='flex h-screen justify-center items-center'>
             <div className="card w-96 bg-base-100 shadow-xl">
-                <div className="card-body">
+                <div className="card-body form">
                     <h2 className="text-center text-3xl font-bold">Login</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form  onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label">

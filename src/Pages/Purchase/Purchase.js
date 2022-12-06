@@ -8,7 +8,7 @@ const Purchase = () => {
     const [purchase, setPurchase]= useState({});
     const [user, loading, error] = useAuthState(auth);
     useEffect(()=>{
-        fetch(`http://localhost:5000/product/${productId}`)
+        fetch(`https://cameragraphy-server.vercel.app/product/${productId}`)
             .then(res => res.json())
             .then(data => setPurchase(data));
     })
@@ -23,7 +23,7 @@ const Purchase = () => {
             address: event.target.address.value,
 
         }
-        fetch('http://localhost:5000/purchased', {
+        fetch('https://cameragraphy-server.vercel.app/purchased', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

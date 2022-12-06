@@ -5,7 +5,7 @@ import Product from '../Home/Product';
 const Explore = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/explore')
+        fetch('https://cameragraphy-server.vercel.app/explore')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);

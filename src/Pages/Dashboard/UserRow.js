@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const UserRow = ({ user, index, refetch }) => {
     const {email, role}=user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`,{
+        fetch(`https://cameragraphy-server.vercel.app/user/admin/${email}`,{
             method:'PUT',
             headers:{
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const UserRow = ({ user, index, refetch }) => {
 
         if (proceed) {
             console.log('deleting user with id', id);
-            const url = `http://localhost:5000/user/${id}`;
+            const url = `https://cameragraphy-server.vercel.app/user/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

@@ -7,8 +7,8 @@ const Products = () => {
     // console.log(services);
     return (
         <div>
-            <h2>This is products</h2>
-           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+           
+           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10'>
                 {
                     products.map(product => <Product key={product._id} product={product}></Product>)
                 }

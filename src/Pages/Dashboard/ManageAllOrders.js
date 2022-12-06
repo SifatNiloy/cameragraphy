@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/allorders`, {
+            fetch(`https://cameragraphy-server.vercel.app/allorders`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const ManageAllOrders = () => {
         const proceed = window.confirm('Are you sure you want to delete this order?');
         if (proceed) {
             console.log('deleting order with id', id);
-            const url = `http://localhost:5000/allorders/${id}`;
+            const url = `https://cameragraphy-server.vercel.app/allorders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

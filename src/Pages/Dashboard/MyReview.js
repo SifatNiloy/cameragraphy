@@ -38,7 +38,7 @@ const MyReview = () => {
                     }
                     console.log(newProduct)
                     //sending to database
-                    fetch(`http://localhost:5000/newProduct`, {
+                    fetch(`https://cameragraphy-server.vercel.app/newProduct`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -61,7 +61,7 @@ const MyReview = () => {
         const userReview={star, review};
         console.log(userReview)
         //post review to server
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://cameragraphy-server.vercel.app/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
