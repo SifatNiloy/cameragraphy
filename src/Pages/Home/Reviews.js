@@ -11,10 +11,10 @@ const Reviews = () => {
 
        
     return (
-        <div>
-            <h2 className='text-5xl'>total reviews: {reviews.length}</h2>
+        <div className='my-10'>
+            <h2 className='text-5xl flex justify-center pb-10'>User Reviews</h2>
             {
-                reviews.map(review=> <Review review={review}></Review>)
+                reviews.map(review=> <Review key={review._id} review={review}></Review>)
             }
         </div>
     );

@@ -3,7 +3,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
-import About from './Pages/About/About';
+
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders';
@@ -30,7 +30,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/about' element={<About></About>}></Route>
+        
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/explore' element={ <Explore /> }></Route>
        

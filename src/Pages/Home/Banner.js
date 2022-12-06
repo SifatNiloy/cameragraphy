@@ -1,28 +1,32 @@
 import React from 'react';
-
+import item1 from '../../images/camera-2.jpg'
+import item2 from '../../images/camera-3.jpg'
+import item3 from '../../images/camera-4.jpg'
 const Banner = () => {
     return (
-        <div>
-            <div className="carousel w-full">
-                <div id="item1" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
+        <div class="carousel w-full">
+            <div id="slide1" class="carousel-item relative w-full">
+                <img src={item1} class="w-full" alt='' />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a>
+                    <a href="#slide2" class="btn btn-circle">❯</a>
                 </div>
             </div>
-            <div className="flex justify-center w-full py-2 gap-2">
-                <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
-                <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
+            <div id="slide2" class="carousel-item relative w-full">
+                <img src={item2} class="w-full" alt=''/>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a>
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                </div>
             </div>
+            <div id="slide3" class="carousel-item relative w-full">
+                <img src={item3} class="w-full" alt=''  />
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a>
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                </div>
+            </div>
+            
         </div>
     );
 };

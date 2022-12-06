@@ -21,17 +21,11 @@ const Navbar = () => {
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/explore'>Explore</Link></li>
-        <li><Link to='/about'>About</Link></li>
+        
         {
             user && <li> <Link to='/dashboard'> Dashboard </Link> </li>
         }
-        {/* <li>{user &&
-            // <div className="dropdown dropdown-bottom">
-
-            //     <label tabIndex="0" className="btn ">Dashboard</label>
-            //     {items}
-            // </div>
-            : ''} </li> */}
+        
         <li>{user ? <button className="btn btn-ghost" onClick={logout}>Logout</button> : <Link to='/dashboard'>Sign In</Link>}</li>
         
     </>
