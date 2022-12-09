@@ -3,7 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
-
+import './BgColor.css'
 const Navbar = () => {
     const logout = () => {
         signOut(auth);
@@ -19,18 +19,18 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/explore'>Explore</Link></li>
+        <li className='text-lg'><Link to='/'>Home</Link></li>
+        <li className='text-lg'><Link to='/explore'>Explore</Link></li>
         
         {
-            user && <li> <Link to='/dashboard'> Dashboard </Link> </li>
+            user && <li className='text-lg'> <Link to='/dashboard'> Dashboard </Link> </li>
         }
         
-        <li>{user ? <button className="btn btn-ghost" onClick={logout}>Logout</button> : <Link to='/dashboard'>Sign In</Link>}</li>
+        <li >{user ? <button  className="btn btn-ghost text-lg" onClick={logout}>Logout</button> : <Link className='text-lg' to='/dashboard'>Sign In</Link>}</li>
         
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bgcolor px-12">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -40,7 +40,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Cameragraphy</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-2xl">Cameragraphy</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
