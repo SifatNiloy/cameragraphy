@@ -2,7 +2,8 @@ import React from 'react';
 
 const Article = () => {
     return (
-        <div className='bg-gray-200 p-6'>
+        <div className=' p-6'>
+            
             <h2 className='text-3xl mt-12 mb-6 text-orange-700'>Buy Digital, DSLR Camera at the Best Price </h2>
             <div className="text-gray-900">
                 <p>Capture your memory in a digital frame for eternal period with our exclusive Digital, DSLR or action camera, semi SLR camera and Handycams.   In this category you will discover a diversity of different cameras suitable for the beginners, enthusiasts and professionals.  </p>

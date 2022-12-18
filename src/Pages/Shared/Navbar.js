@@ -19,14 +19,14 @@ const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
     
     const menuItems = <>
-        <li className='text-lg'><Link to='/'>Home</Link></li>
-        <li className='text-lg'><Link to='/explore'>Explore</Link></li>
+        <li className='text-lg text-black'><Link to='/'>Home</Link></li>
+        <li className='text-lg text-black'><Link to='/explore'>Explore</Link></li>
         
         {
-            user && <li className='text-lg'> <Link to='/dashboard'> Dashboard </Link> </li>
+            user && <li className='text-lg text-black'> <Link to='/dashboard'> Dashboard </Link> </li>
         }
         
-        <li >{user ? <button  className="btn btn-ghost text-lg" onClick={logout}>Logout</button> : <Link className='text-lg' to='/dashboard'>Sign In</Link>}</li>
+        <li >{user ? <button  className="btn btn-ghost text-lg text-black" onClick={logout}>Logout</button> : <Link className='text-lg text-black' to='/dashboard'>Sign In</Link>}</li>
         
     </>
     return (

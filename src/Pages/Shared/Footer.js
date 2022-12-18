@@ -1,10 +1,10 @@
 import React from 'react';
-import './BgColor.css'
+
 const Footer = () => {
     return (
-        <div className='mt-10'>
+        <div className='mt-10 '>
            
-            <footer className="footer px-14 py-10 bgcolor text-base-content">
+            <footer className="footer px-14 py-10 bg-neutral text-neutral-content ">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
@@ -29,7 +29,7 @@ const Footer = () => {
                     <span className="footer-title">Newsletter</span>
                     <div className="form-control w-80">
                         <label className="label">
-                            <span className="label-text mb-4">Subscribe For New Product Updates</span>
+                            <span className="label-text mb-4 text-white">Subscribe For New Product Updates</span>
                         </label>
                         <div className="relative">
                             <input type="text" placeholder="enter your email" className="input input-bordered w-full pr-16" />
