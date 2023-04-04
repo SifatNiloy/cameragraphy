@@ -21,11 +21,11 @@ const Product = ({product}) => {
         //         </div>
         //     </div>
         // </div>
-        <div className="card card-compact w-80 bg-base-100 shadow-xl mt-12 mycard">
+        <div className="card card-compact w-70 bg-base-100 shadow-xl mt-12 mycard">
             <figure ><img src={img} /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <div className="grid grid-cols-2">
+                <div >
                     <p className='font-bold text-blue-500'>Price : {price}</p>
                     <p>{description}</p>
                 </div>

@@ -1,14 +1,9 @@
 import React from 'react';
-
+import './Loading.css'
 const Loading = () => {
     return (
         <div className='mt-96'>
-            <div class="waveform">
-                <div class="waveform__bar"></div>
-                <div class="waveform__bar"></div>
-                <div class="waveform__bar"></div>
-                <div class="waveform__bar"></div>
-            </div>
+            <span class="loader"></span>
 
         </div>
     );

@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 import Product from '../Home/Product';
+import Loading from '../Shared/Loading';
+import { useQuery } from 'react-query';
 
 const Explore = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('https://cameragraphy-server.vercel.app/explore')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, []);
-    
+    // const [products, setProducts] = useState([]);
+    // useEffect(() => {
+    //     fetch('https://cameragraphy-server.vercel.app/explore')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data));
+    // }, []);
+    const { data: products, isLoading, refetch } = useQuery('reviews', () => fetch('https://cameragraphy-server.vercel.app/explore').then(res => res.json()));
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div className='px-12 '>
             {/* <h2 className='text-5xl mb-10'>This is explore</h2> */}

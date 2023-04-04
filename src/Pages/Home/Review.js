@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-const Review = ({ review }) => {
-    const [stars, setStars]= useState('');
+const Review = ({ review, refetch }) => {
+    const [stars, setStars] = useState('');
     useEffect(() => {
         if (review.star === 5) {
             setStars('⭐⭐⭐⭐⭐')

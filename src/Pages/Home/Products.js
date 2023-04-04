@@ -1,16 +1,12 @@
 import React from 'react';
 import useProducts from '../../hooks/useProducts';
 import Product from './Product';
-import Loading from '../Shared/Loading';
-import { useQuery } from 'react-query';
+
 
 const Products = () => {
-    // const [products, setProducts] = useProducts([]);
+    const [products, setProducts] = useProducts([]);
     // console.log(services);
-    const { data: products, isLoading, refetch } = useQuery('reviews', () => fetch('https://cameragraphy-server.vercel.app/products').then(res => res.json()));
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+
     return (
         <div>
            
