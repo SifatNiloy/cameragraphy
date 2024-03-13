@@ -1,14 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useProducts = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch('https://cameragraphy-server.vercel.app/product')
-            .then(res => res.json())
-            .then(data => setProducts(data));
-    }, []);
-    return [products, setProducts];
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://cameragraphy-server.onrender.com/product"
+        );
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return [products, setProducts];
 };
 
 export default useProducts;

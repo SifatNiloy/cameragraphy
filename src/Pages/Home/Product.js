@@ -1,40 +1,46 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Product.css'
-const Product = ({product}) => {
-    const {_id, name,price, img, description}= product;
-    const navigate = useNavigate();
-    const navigateToPurchase = id => {
-        navigate(`/product/${id}`)
-    }
-    return (
-        // <div className="card w-96 shadow-xl  bg-blue-300">
-        //     <figure className="px-4 pt-4">
-        //         <img src={img} alt="Shoes" className="rounded-xl" />
-        //     </figure>
-        //     <div className="card-body items-center text-center">
-        //         <h2 className="card-title">{name}</h2>
-        //         <p className='text-black'>{description}</p>
-        //         <h2 className='text-2xl text-orange-800'>Price: {price}</h2>
-        //         <div className="card-actions">
-        //             <button className="btn btn-primary" onClick={() => navigateToPurchase(_id)}>Buy Now</button>
-        //         </div>
-        //     </div>
-        // </div>
-        <div className="card card-compact w-70 bg-base-100 shadow-xl mt-12 mycard">
-            <figure ><img src={img} /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                <div >
-                    <p className='font-bold text-blue-500'>Price : {price}</p>
-                    <p>{description}</p>
-                </div>
-                <div className="card-actions justify-center">
-                    <button className="btn btn-primary" onClick={() => navigateToPurchase(_id)}>Buy Now</button>
-                </div>
-            </div>
+
+const Product = ({ product }) => {
+  const { _id, name, price, img, description } = product;
+  const navigate = useNavigate();
+
+  const navigateToPurchase = () => {
+    navigate(`/product/${_id}`);
+  };
+
+  // Function to truncate the description
+  const truncateDescription = (text, maxLength) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  };
+
+  // Set the maximum length for the truncated description
+  const maxDescriptionLength = 100;
+
+  return (
+    <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg my-8">
+      <div className="relative overflow-hidden">
+        <img className="w-full h-50 object-cover" src={img} alt={name} />
+      </div>
+      <div className="p-4">
+        <h2 className="text-xl font-semibold mb-2">{name}</h2>
+        <p className="text-gray-500 text-sm mb-4">
+          {truncateDescription(description, maxDescriptionLength)}
+        </p>
+        <div className="flex justify-between items-center">
+          <div>
+            <p className="text-blue-500 font-bold">Price: {price}</p>
+          </div>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105 focus:outline-none focus:shadow-outline"
+            onClick={navigateToPurchase}
+          >
+            Buy Now
+          </button>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Product;
