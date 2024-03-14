@@ -10,6 +10,7 @@ const Product = ({ product }) => {
   };
 
   const truncateDescription = (text, maxLength) => {
+    if (!text) return ""; // Checking if text is undefined or null
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
 
