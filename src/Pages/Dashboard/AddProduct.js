@@ -32,7 +32,7 @@ const AddProduct = () => {
           };
           console.log(newProduct);
           //sending to database
-          fetch(`https://cameragraphy-server.onrender.com/newProduct`, {
+          fetch(`https://camapi.sifatniloy.top/newProduct`, {
             method: "POST",
             headers: {
               "content-type": "application/json",

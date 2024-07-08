@@ -12,15 +12,12 @@ const Orders = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(
-        `https://cameragraphy-server.onrender.com/purchased?email=${user.email}`,
-        {
-          method: "GET",
-          headers: {
-            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-          },
-        }
-      )
+      fetch(`https://camapi.sifatniloy.top/purchased?email=${user.email}`, {
+        method: "GET",
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
         .then((res) => {
           console.log("res", res);
           if (res.status === 401 || res.status === 403) {
@@ -43,7 +40,7 @@ const Orders = () => {
     );
     if (proceed) {
       console.log("deleting order with id", id);
-      const url = `https://cameragraphy-server.onrender.com/allorders/${id}`;
+      const url = `https://camapi.sifatniloy.top/allorders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

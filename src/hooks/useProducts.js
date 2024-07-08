@@ -6,9 +6,7 @@ const useProducts = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          "https://cameragraphy-server.onrender.com/product"
-        );
+        const response = await fetch("https://camapi.sifatniloy.top/product");
         if (!response.ok) {
           throw new Error(`Failed to fetch: ${response.statusText}`);
         }

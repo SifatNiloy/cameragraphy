@@ -9,9 +9,7 @@ const Reviews = () => {
     isLoading,
     refetch,
   } = useQuery("reviews", () =>
-    fetch("https://cameragraphy-server.onrender.com/allreviews").then((res) =>
-      res.json()
-    )
+    fetch("https://camapi.sifatniloy.top/allreviews").then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

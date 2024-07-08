@@ -9,9 +9,7 @@ const Users = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://cameragraphy-server.onrender.com/user").then((res) =>
-      res.json()
-    )
+    fetch("https://camapi.sifatniloy.top/user").then((res) => res.json())
   );
 
   if (isLoading) {

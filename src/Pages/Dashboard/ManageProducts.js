@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 const ManageProducts = () => {
-  // const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://cameragraphy-server.onrender.com/explore').then(res => res.json()));
+  // const { data: products, isLoading, refetch } = useQuery('products', () => fetch('https://camapi.sifatniloy.top/explore').then(res => res.json()));
   // console.log(products)
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`https://cameragraphy-server.onrender.com/explore`)
+    fetch(`https://camapi.sifatniloy.top/explore`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   });
@@ -16,7 +16,7 @@ const ManageProducts = () => {
     );
     if (proceed) {
       console.log("deleting order with id", id);
-      const url = `https://cameragraphy-server.onrender.com/explore/${id}`;
+      const url = `https://camapi.sifatniloy.top/explore/${id}`;
       fetch(url, {
         method: "DELETE",
       })

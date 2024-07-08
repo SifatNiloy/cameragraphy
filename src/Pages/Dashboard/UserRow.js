@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const UserRow = ({ user, index, refetch }) => {
   const { email, role } = user;
   const makeAdmin = () => {
-    fetch(`https://cameragraphy-server.onrender.com/user/admin/${email}`, {
+    fetch(`https://camapi.sifatniloy.top/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -32,7 +32,7 @@ const UserRow = ({ user, index, refetch }) => {
 
     if (proceed) {
       console.log("deleting user with id", id);
-      const url = `https://cameragraphy-server.onrender.com/user/${id}`;
+      const url = `https://camapi.sifatniloy.top/user/${id}`;
       fetch(url, {
         method: "DELETE",
       })

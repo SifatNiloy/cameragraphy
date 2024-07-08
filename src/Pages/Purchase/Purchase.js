@@ -8,7 +8,7 @@ const Purchase = () => {
   const [purchase, setPurchase] = useState({});
   const [user, loading, error] = useAuthState(auth);
   useEffect(() => {
-    fetch(`https://cameragraphy-server.onrender.com/product/${productId}`)
+    fetch(`https://camapi.sifatniloy.top/product/${productId}`)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   });
@@ -22,7 +22,7 @@ const Purchase = () => {
       phone: event.target.phone.value,
       address: event.target.address.value,
     };
-    fetch("https://cameragraphy-server.onrender.com/purchased", {
+    fetch("https://camapi.sifatniloy.top/purchased", {
       method: "POST",
       headers: {
         "content-type": "application/json",

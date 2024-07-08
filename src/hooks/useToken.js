@@ -7,7 +7,7 @@ const useToken = (user) => {
     const email = user?.user?.email;
     const currentUser = { email: email };
     if (email) {
-      fetch(`https://cameragraphy-server.onrender.com/user/${email}`, {
+      fetch(`https://camapi.sifatniloy.top/user/${email}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

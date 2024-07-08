@@ -6,7 +6,7 @@ const useAdmin = (user) => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`https://cameragraphy-server.onrender.com/admin/${email}`, {
+      fetch(`https://camapi.sifatniloy.top/admin/${email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",

@@ -1,27 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Product from "../Home/Product";
 import Loading from "../Shared/Loading";
 
 const Explore = () => {
-  // const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //     fetch('https://cameragraphy-server.onrender.com/explore')
-  //         .then(res => res.json())
-  //         .then(data => setProducts(data));
-  // }, []);
-  const {
-    data: products,
-    isLoading,
-    refetch,
-  } = useQuery("reviews", () =>
-    fetch("https://cameragraphy-server.onrender.com/explore").then((res) =>
-      res.json()
-    )
-  );
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("https://camapi.sifatniloy.top/explore")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+  // const {
+  //   data: products,
+  //   isLoading,
+  //   refetch,
+  // } = useQuery("reviews", () =>
+  //   fetch("https://camapi.sifatniloy.top/explore").then((res) => res.json())
+  // );
+  // if (isLoading) {
+  //   return <Loading></Loading>;
+  // }
 
   return (
     <div className="px-12 ">

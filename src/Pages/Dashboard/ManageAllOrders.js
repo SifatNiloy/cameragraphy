@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
-      fetch(`https://cameragraphy-server.onrender.com/allorders`, {
+      fetch(`https://camapi.sifatniloy.top/allorders`, {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
     );
     if (proceed) {
       console.log("deleting order with id", id);
-      const url = `https://cameragraphy-server.onrender.com/allorders/${id}`;
+      const url = `https://camapi.sifatniloy.top/allorders/${id}`;
       fetch(url, {
         method: "DELETE",
       })

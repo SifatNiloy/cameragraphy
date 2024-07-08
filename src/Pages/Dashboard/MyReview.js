@@ -34,7 +34,7 @@ const MyReview = () => {
           };
           console.log(newProduct);
           //sending to database
-          fetch(`https://cameragraphy-server.onrender.com/newProduct`, {
+          fetch(`https://camapi.sifatniloy.top/newProduct`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -54,7 +54,7 @@ const MyReview = () => {
     const userReview = { star, review };
     console.log(userReview);
     //post review to server
-    fetch(`https://cameragraphy-server.onrender.com/reviews`, {
+    fetch(`https://camapi.sifatniloy.top/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
