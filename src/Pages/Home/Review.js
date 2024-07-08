@@ -1,61 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Review = ({ review, refetch }) => {
-  const [stars, setStars] = useState("");
-  const [cardColor, setCardColor] = useState("");
-
-  useEffect(() => {
-    // Use a switch statement for better readability
-    switch (review.star) {
-      case 5:
-        setStars("⭐⭐⭐⭐⭐");
-        break;
-      case 4:
-        setStars("⭐⭐⭐⭐");
-        break;
-      case 3:
-        setStars("⭐⭐⭐");
-        break;
-      case 2:
-        setStars("⭐⭐");
-        break;
-      case 1:
-        setStars("⭐");
-        break;
-      default:
-        setStars("no star");
+const Review = ({ review }) => {
+  const generateStars = (star) => {
+    const starsArray = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= star) {
+        starsArray.push(<span key={i} className="text-yellow-400">&#9733;</span>); // Full star
+      } else {
+        starsArray.push(<span key={i} className="text-gray-300">&#9733;</span>); // Empty star
+      }
     }
+    return starsArray;
+  };
 
-    // Assign different colors based on review.star
-    switch (review.star) {
-      case 5:
-        setCardColor("bg-green-100");
-        break;
-      case 4:
-        setCardColor("bg-blue-100");
-        break;
-      case 3:
-        setCardColor("bg-yellow-100");
-        break;
-      case 2:
-        setCardColor("bg-orange-100");
-        break;
-      case 1:
-        setCardColor("bg-red-100");
-        break;
-      default:
-        setCardColor("bg-gray-100");
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
     }
-  }, [review.star]);
+    return text;
+  };
+
+  const getCardColor = (star) => {
+    switch (star) {
+      case 5:
+        return "bg-green-100";
+      case 4:
+        return "bg-blue-100";
+      case 3:
+        return "bg-yellow-100";
+      case 2:
+        return "bg-orange-100";
+      case 1:
+        return "bg-red-100";
+      default:
+        return "bg-gray-100";
+    }
+  };
 
   return (
-    <div className="flex justify-center items-center mb-4">
-      <div
-        className={`w-80 h-30 mx-4 rounded-lg overflow-hidden shadow-lg ${cardColor}`}
-      >
+    <div className="max-w-md mx-auto mb-4">
+      <div className={`rounded-lg overflow-hidden shadow-lg ${getCardColor(review.star)} min-h-full w-80`}>
         <div className="p-4">
-          <h1 className="text-2xl text-center mb-2">{stars}</h1>
-          <p className="text-lg text-blue-500 text-center">{review.review}</p>
+          <div className="flex items-center justify-center mb-2">
+            {generateStars(review.star)}
+          </div>
+          <p className="text-lg text-blue-500 text-center">{truncateText(review.review, 120)}</p>
         </div>
       </div>
     </div>
